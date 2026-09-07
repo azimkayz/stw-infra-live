@@ -1,0 +1,96 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  subgraph "cluster_module.bastion" {
+    label = "module.bastion"
+    fontname = "sans-serif"
+    "module.bastion.azurerm_bastion_host.this" [label="azurerm_bastion_host.this"];
+    "module.bastion.azurerm_subnet.bastion" [label="azurerm_subnet.bastion"];
+  }
+  subgraph "cluster_module.bastion_public_ip" {
+    label = "module.bastion_public_ip"
+    fontname = "sans-serif"
+    "module.bastion_public_ip.azurerm_public_ip.this" [label="azurerm_public_ip.this"];
+  }
+  subgraph "cluster_module.data_disks" {
+    label = "module.data_disks"
+    fontname = "sans-serif"
+    "module.data_disks.azurerm_managed_disk.this" [label="azurerm_managed_disk.this"];
+    "module.data_disks.azurerm_virtual_machine_data_disk_attachment.this" [label="azurerm_virtual_machine_data_disk_attachment.this"];
+  }
+  subgraph "cluster_module.monitoring" {
+    label = "module.monitoring"
+    fontname = "sans-serif"
+    "module.monitoring.azurerm_monitor_data_collection_rule.this" [label="azurerm_monitor_data_collection_rule.this"];
+    "module.monitoring.azurerm_monitor_data_collection_rule_association.this" [label="azurerm_monitor_data_collection_rule_association.this"];
+    "module.monitoring.azurerm_virtual_machine_extension.ama" [label="azurerm_virtual_machine_extension.ama"];
+  }
+  subgraph "cluster_module.nat_gateway" {
+    label = "module.nat_gateway"
+    fontname = "sans-serif"
+    "module.nat_gateway.azurerm_nat_gateway.this" [label="azurerm_nat_gateway.this"];
+    "module.nat_gateway.azurerm_nat_gateway_public_ip_association.this" [label="azurerm_nat_gateway_public_ip_association.this"];
+    "module.nat_gateway.azurerm_subnet_nat_gateway_association.this" [label="azurerm_subnet_nat_gateway_association.this"];
+  }
+  subgraph "cluster_module.nat_public_ip" {
+    label = "module.nat_public_ip"
+    fontname = "sans-serif"
+    "module.nat_public_ip.azurerm_public_ip.this" [label="azurerm_public_ip.this"];
+  }
+  subgraph "cluster_module.resource_group" {
+    label = "module.resource_group"
+    fontname = "sans-serif"
+    "module.resource_group.azurerm_resource_group.this" [label="azurerm_resource_group.this"];
+  }
+  subgraph "cluster_module.storage_account" {
+    label = "module.storage_account"
+    fontname = "sans-serif"
+    "module.storage_account.azurerm_storage_account.this" [label="azurerm_storage_account.this"];
+    "module.storage_account.azurerm_storage_container.this" [label="azurerm_storage_container.this"];
+  }
+  subgraph "cluster_module.subnets_nsg" {
+    label = "module.subnets_nsg"
+    fontname = "sans-serif"
+    "module.subnets_nsg.azurerm_network_security_group.vm" [label="azurerm_network_security_group.vm"];
+    "module.subnets_nsg.azurerm_subnet.vm" [label="azurerm_subnet.vm"];
+    "module.subnets_nsg.azurerm_subnet_network_security_group_association.vm" [label="azurerm_subnet_network_security_group_association.vm"];
+  }
+  subgraph "cluster_module.vm_nic" {
+    label = "module.vm_nic"
+    fontname = "sans-serif"
+    "module.vm_nic.azurerm_linux_virtual_machine.this" [label="azurerm_linux_virtual_machine.this"];
+    "module.vm_nic.azurerm_network_interface.this" [label="azurerm_network_interface.this"];
+  }
+  subgraph "cluster_module.vnet" {
+    label = "module.vnet"
+    fontname = "sans-serif"
+    "module.vnet.azurerm_virtual_network.this" [label="azurerm_virtual_network.this"];
+  }
+  "module.bastion.azurerm_bastion_host.this" -> "module.bastion.azurerm_subnet.bastion";
+  "module.bastion.azurerm_bastion_host.this" -> "module.bastion_public_ip.azurerm_public_ip.this";
+  "module.bastion.azurerm_subnet.bastion" -> "module.vnet.azurerm_virtual_network.this";
+  "module.bastion_public_ip.azurerm_public_ip.this" -> "module.resource_group.azurerm_resource_group.this";
+  "module.data_disks.azurerm_managed_disk.this" -> "module.resource_group.azurerm_resource_group.this";
+  "module.data_disks.azurerm_virtual_machine_data_disk_attachment.this" -> "module.data_disks.azurerm_managed_disk.this";
+  "module.data_disks.azurerm_virtual_machine_data_disk_attachment.this" -> "module.vm_nic.azurerm_linux_virtual_machine.this";
+  "module.monitoring.azurerm_monitor_data_collection_rule.this" -> "module.monitoring.azurerm_virtual_machine_extension.ama";
+  "module.monitoring.azurerm_monitor_data_collection_rule.this" -> "module.storage_account.azurerm_storage_container.this";
+  "module.monitoring.azurerm_monitor_data_collection_rule_association.this" -> "module.monitoring.azurerm_monitor_data_collection_rule.this";
+  "module.monitoring.azurerm_virtual_machine_extension.ama" -> "module.vm_nic.azurerm_linux_virtual_machine.this";
+  "module.nat_gateway.azurerm_nat_gateway.this" -> "module.resource_group.azurerm_resource_group.this";
+  "module.nat_gateway.azurerm_nat_gateway_public_ip_association.this" -> "module.nat_gateway.azurerm_nat_gateway.this";
+  "module.nat_gateway.azurerm_nat_gateway_public_ip_association.this" -> "module.nat_public_ip.azurerm_public_ip.this";
+  "module.nat_gateway.azurerm_subnet_nat_gateway_association.this" -> "module.nat_gateway.azurerm_nat_gateway.this";
+  "module.nat_gateway.azurerm_subnet_nat_gateway_association.this" -> "module.subnets_nsg.azurerm_subnet.vm";
+  "module.nat_public_ip.azurerm_public_ip.this" -> "module.resource_group.azurerm_resource_group.this";
+  "module.storage_account.azurerm_storage_account.this" -> "module.resource_group.azurerm_resource_group.this";
+  "module.storage_account.azurerm_storage_container.this" -> "module.storage_account.azurerm_storage_account.this";
+  "module.subnets_nsg.azurerm_network_security_group.vm" -> "module.resource_group.azurerm_resource_group.this";
+  "module.subnets_nsg.azurerm_subnet.vm" -> "module.vnet.azurerm_virtual_network.this";
+  "module.subnets_nsg.azurerm_subnet_network_security_group_association.vm" -> "module.subnets_nsg.azurerm_network_security_group.vm";
+  "module.subnets_nsg.azurerm_subnet_network_security_group_association.vm" -> "module.subnets_nsg.azurerm_subnet.vm";
+  "module.vm_nic.azurerm_linux_virtual_machine.this" -> "module.vm_nic.azurerm_network_interface.this";
+  "module.vm_nic.azurerm_network_interface.this" -> "module.nat_gateway.azurerm_nat_gateway_public_ip_association.this";
+  "module.vm_nic.azurerm_network_interface.this" -> "module.nat_gateway.azurerm_subnet_nat_gateway_association.this";
+  "module.vnet.azurerm_virtual_network.this" -> "module.resource_group.azurerm_resource_group.this";
+}

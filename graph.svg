@@ -1,0 +1,350 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2569pt" height="587pt" viewBox="0.00 0.00 2568.59 587.00">
+<g id="graph0" class="graph" transform="translate(4,583) scale(1)" data-name="G">
+
+<polygon fill="white" stroke="none" points="-4,4 -4,-583 2564.59,-583 2564.59,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="cluster_module.bastion">
+
+<polygon fill="none" stroke="black" points="480.54,-409 480.54,-486 972.37,-486 972.37,-409 480.54,-409" style=""/>
+<text text-anchor="middle" x="726.46" y="-469.4" font-family="sans-serif" font-size="14.00" style="">module.bastion</text>
+</g>
+<g id="clust2" class="cluster" data-name="cluster_module.bastion_public_ip">
+
+<polygon fill="none" stroke="black" points="482.48,-494 482.48,-571 643.95,-571 643.95,-494 482.48,-494" style=""/>
+<text text-anchor="middle" x="563.21" y="-554.4" font-family="sans-serif" font-size="14.00" style="">module.bastion_public_ip</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_module.data_disks">
+
+<polygon fill="none" stroke="black" points="1333.98,-93 1333.98,-170 1894.99,-170 1894.99,-93 1333.98,-93" style=""/>
+<text text-anchor="middle" x="1614.48" y="-153.4" font-family="sans-serif" font-size="14.00" style="">module.data_disks</text>
+</g>
+<g id="clust4" class="cluster" data-name="cluster_module.monitoring">
+
+<polygon fill="none" stroke="black" points="1599.03,-178 1599.03,-255 2552.59,-255 2552.59,-178 1599.03,-178" style=""/>
+<text text-anchor="middle" x="2075.81" y="-238.4" font-family="sans-serif" font-size="14.00" style="">module.monitoring</text>
+</g>
+<g id="clust5" class="cluster" data-name="cluster_module.nat_gateway">
+
+<polygon fill="none" stroke="black" points="473.55,-131 473.55,-262 1036.9,-262 1036.9,-131 473.55,-131" style=""/>
+<text text-anchor="middle" x="755.23" y="-245.4" font-family="sans-serif" font-size="14.00" style="">module.nat_gateway</text>
+</g>
+<g id="clust6" class="cluster" data-name="cluster_module.nat_public_ip">
+
+<polygon fill="none" stroke="black" points="241.93,-177 241.93,-254 403.39,-254 403.39,-177 241.93,-177" style=""/>
+<text text-anchor="middle" x="322.66" y="-237.4" font-family="sans-serif" font-size="14.00" style="">module.nat_public_ip</text>
+</g>
+<g id="clust7" class="cluster" data-name="cluster_module.resource_group">
+
+<polygon fill="none" stroke="black" points="8,-177 8,-254 203.66,-254 203.66,-177 8,-177" style=""/>
+<text text-anchor="middle" x="105.83" y="-237.4" font-family="sans-serif" font-size="14.00" style="">module.resource_group</text>
+</g>
+<g id="clust8" class="cluster" data-name="cluster_module.storage_account">
+
+<polygon fill="none" stroke="black" points="1328.93,-8 1328.93,-85 1834.73,-85 1834.73,-8 1328.93,-8" style=""/>
+<text text-anchor="middle" x="1581.83" y="-68.4" font-family="sans-serif" font-size="14.00" style="">module.storage_account</text>
+</g>
+<g id="clust9" class="cluster" data-name="cluster_module.subnets_nsg">
+
+<polygon fill="none" stroke="black" points="441.66,-270 441.66,-401 1060.62,-401 1060.62,-270 441.66,-270" style=""/>
+<text text-anchor="middle" x="751.14" y="-384.4" font-family="sans-serif" font-size="14.00" style="">module.subnets_nsg</text>
+</g>
+<g id="clust10" class="cluster" data-name="cluster_module.vm_nic">
+
+<polygon fill="none" stroke="black" points="1080.62,-178 1080.62,-255 1546.37,-255 1546.37,-178 1080.62,-178" style=""/>
+<text text-anchor="middle" x="1313.5" y="-238.4" font-family="sans-serif" font-size="14.00" style="">module.vm_nic</text>
+</g>
+<g id="clust11" class="cluster" data-name="cluster_module.vnet">
+
+<polygon fill="none" stroke="black" points="223.66,-292 223.66,-369 421.66,-369 421.66,-292 223.66,-292" style=""/>
+<text text-anchor="middle" x="322.66" y="-352.4" font-family="sans-serif" font-size="14.00" style="">module.vnet</text>
+</g>
+<!-- module.bastion.azurerm_bastion_host.this -->
+<g id="node1" class="node" pointer-events="visible" data-name="module.bastion.azurerm_bastion_host.this">
+
+<polygon fill="none" stroke="black" points="964.56,-453 800.83,-453 800.83,-417 964.56,-417 964.56,-453" style=""/>
+<text text-anchor="middle" x="882.69" y="-430.8" font-family="sans-serif" font-size="14.00" style="">azurerm_bastion_host.this</text>
+</g>
+<!-- module.bastion.azurerm_subnet.bastion -->
+<g id="node2" class="node" pointer-events="visible" data-name="module.bastion.azurerm_subnet.bastion">
+
+<polygon fill="none" stroke="black" points="638.06,-453 488.36,-453 488.36,-417 638.06,-417 638.06,-453" style=""/>
+<text text-anchor="middle" x="563.21" y="-430.8" font-family="sans-serif" font-size="14.00" style="">azurerm_subnet.bastion</text>
+</g>
+<!-- module.bastion.azurerm_bastion_host.this&#45;&gt;module.bastion.azurerm_subnet.bastion -->
+<g id="edge1" class="edge" data-name="module.bastion.azurerm_bastion_host.this-&gt;module.bastion.azurerm_subnet.bastion">
+
+<path fill="none" stroke="black" d="M800.35,-435C754.27,-435 696.67,-435 649.89,-435" style=""/>
+<polygon fill="black" stroke="black" points="650.07,-431.5 640.07,-435 650.07,-438.5 650.07,-431.5" style=""/>
+</g>
+<!-- module.bastion_public_ip.azurerm_public_ip.this -->
+<g id="node3" class="node" pointer-events="visible" data-name="module.bastion_public_ip.azurerm_public_ip.this">
+
+<polygon fill="none" stroke="black" points="636.18,-538 490.25,-538 490.25,-502 636.18,-502 636.18,-538" style=""/>
+<text text-anchor="middle" x="563.21" y="-515.8" font-family="sans-serif" font-size="14.00" style="">azurerm_public_ip.this</text>
+</g>
+<!-- module.bastion.azurerm_bastion_host.this&#45;&gt;module.bastion_public_ip.azurerm_public_ip.this -->
+<g id="edge2" class="edge" data-name="module.bastion.azurerm_bastion_host.this-&gt;module.bastion_public_ip.azurerm_public_ip.this">
+
+<path fill="none" stroke="black" d="M812.92,-453.49C773.15,-464.17 722.14,-477.86 676.76,-490 666.29,-492.8 655.26,-495.75 644.38,-498.65" style=""/>
+<polygon fill="black" stroke="black" points="643.79,-495.19 635.03,-501.14 645.59,-501.95 643.79,-495.19" style=""/>
+</g>
+<!-- module.vnet.azurerm_virtual_network.this -->
+<g id="node21" class="node" pointer-events="visible" data-name="module.vnet.azurerm_virtual_network.this">
+
+<polygon fill="none" stroke="black" points="413.67,-336 231.66,-336 231.66,-300 413.67,-300 413.67,-336" style=""/>
+<text text-anchor="middle" x="322.66" y="-313.8" font-family="sans-serif" font-size="14.00" style="">azurerm_virtual_network.this</text>
+</g>
+<!-- module.bastion.azurerm_subnet.bastion&#45;&gt;module.vnet.azurerm_virtual_network.this -->
+<g id="edge3" class="edge" data-name="module.bastion.azurerm_subnet.bastion-&gt;module.vnet.azurerm_virtual_network.this">
+
+<path fill="none" stroke="black" d="M487.96,-421.37C472.27,-417.16 456.11,-411.79 441.66,-405 408.11,-389.22 374.54,-363.23 351.83,-343.76" style=""/>
+<polygon fill="black" stroke="black" points="354.36,-341.32 344.53,-337.38 349.76,-346.6 354.36,-341.32" style=""/>
+</g>
+<!-- module.resource_group.azurerm_resource_group.this -->
+<g id="node13" class="node" pointer-events="visible" data-name="module.resource_group.azurerm_resource_group.this">
+
+<polygon fill="none" stroke="black" points="195.49,-221 16.17,-221 16.17,-185 195.49,-185 195.49,-221" style=""/>
+<text text-anchor="middle" x="105.83" y="-198.8" font-family="sans-serif" font-size="14.00" style="">azurerm_resource_group.this</text>
+</g>
+<!-- module.bastion_public_ip.azurerm_public_ip.this&#45;&gt;module.resource_group.azurerm_resource_group.this -->
+<g id="edge4" class="edge" data-name="module.bastion_public_ip.azurerm_public_ip.this-&gt;module.resource_group.azurerm_resource_group.this">
+
+<path fill="none" stroke="black" d="M489.91,-505.11C473.79,-500.94 456.96,-495.9 441.66,-490 339.07,-450.42 305.55,-446.38 223.66,-373 177.29,-331.46 140.03,-267.94 120.88,-231.45" style=""/>
+<polygon fill="black" stroke="black" points="124.13,-230.12 116.44,-222.83 117.91,-233.32 124.13,-230.12" style=""/>
+</g>
+<!-- module.data_disks.azurerm_managed_disk.this -->
+<g id="node4" class="node" pointer-events="visible" data-name="module.data_disks.azurerm_managed_disk.this">
+
+<polygon fill="none" stroke="black" points="1515.66,-137 1341.75,-137 1341.75,-101 1515.66,-101 1515.66,-137" style=""/>
+<text text-anchor="middle" x="1428.71" y="-114.8" font-family="sans-serif" font-size="14.00" style="">azurerm_managed_disk.this</text>
+</g>
+<!-- module.data_disks.azurerm_managed_disk.this&#45;&gt;module.resource_group.azurerm_resource_group.this -->
+<g id="edge5" class="edge" data-name="module.data_disks.azurerm_managed_disk.this-&gt;module.resource_group.azurerm_resource_group.this">
+
+<path fill="none" stroke="black" d="M1341.5,-116.95C1234.23,-114.58 1045.45,-111 883.69,-111 883.69,-111 883.69,-111 562.21,-111 410.59,-111 370.03,-113.45 223.66,-153 199.61,-159.5 174.04,-169.99 152.98,-179.69" style=""/>
+<polygon fill="black" stroke="black" points="151.65,-176.45 144.09,-183.87 154.63,-182.79 151.65,-176.45" style=""/>
+</g>
+<!-- module.data_disks.azurerm_virtual_machine_data_disk_attachment.this -->
+<g id="node5" class="node" pointer-events="visible" data-name="module.data_disks.azurerm_virtual_machine_data_disk_attachment.this">
+
+<polygon fill="none" stroke="black" points="1886.8,-137 1574.56,-137 1574.56,-101 1886.8,-101 1886.8,-137" style=""/>
+<text text-anchor="middle" x="1730.68" y="-114.8" font-family="sans-serif" font-size="14.00" style="">azurerm_virtual_machine_data_disk_attachment.this</text>
+</g>
+<!-- module.data_disks.azurerm_virtual_machine_data_disk_attachment.this&#45;&gt;module.data_disks.azurerm_managed_disk.this -->
+<g id="edge6" class="edge" data-name="module.data_disks.azurerm_virtual_machine_data_disk_attachment.this-&gt;module.data_disks.azurerm_managed_disk.this">
+
+<path fill="none" stroke="black" d="M1574.42,-119C1558.36,-119 1542.37,-119 1527.21,-119" style=""/>
+<polygon fill="black" stroke="black" points="1527.3,-115.5 1517.3,-119 1527.3,-122.5 1527.3,-115.5" style=""/>
+</g>
+<!-- module.vm_nic.azurerm_linux_virtual_machine.this -->
+<g id="node19" class="node" pointer-events="visible" data-name="module.vm_nic.azurerm_linux_virtual_machine.this">
+
+<polygon fill="none" stroke="black" points="1538.53,-222 1318.88,-222 1318.88,-186 1538.53,-186 1538.53,-222" style=""/>
+<text text-anchor="middle" x="1428.71" y="-199.8" font-family="sans-serif" font-size="14.00" style="">azurerm_linux_virtual_machine.this</text>
+</g>
+<!-- module.data_disks.azurerm_virtual_machine_data_disk_attachment.this&#45;&gt;module.vm_nic.azurerm_linux_virtual_machine.this -->
+<g id="edge7" class="edge" data-name="module.data_disks.azurerm_virtual_machine_data_disk_attachment.this-&gt;module.vm_nic.azurerm_linux_virtual_machine.this">
+
+<path fill="none" stroke="black" d="M1670.41,-137.43C1634.6,-148.41 1587.98,-162.41 1546.37,-174 1535.94,-176.9 1524.97,-179.86 1514.08,-182.73" style=""/>
+<polygon fill="black" stroke="black" points="1513.51,-179.26 1504.72,-185.18 1515.28,-186.03 1513.51,-179.26" style=""/>
+</g>
+<!-- module.monitoring.azurerm_monitor_data_collection_rule.this -->
+<g id="node6" class="node" pointer-events="visible" data-name="module.monitoring.azurerm_monitor_data_collection_rule.this">
+
+<polygon fill="none" stroke="black" points="2181.28,-222 1922.89,-222 1922.89,-186 2181.28,-186 2181.28,-222" style=""/>
+<text text-anchor="middle" x="2052.09" y="-199.8" font-family="sans-serif" font-size="14.00" style="">azurerm_monitor_data_collection_rule.this</text>
+</g>
+<!-- module.monitoring.azurerm_virtual_machine_extension.ama -->
+<g id="node8" class="node" pointer-events="visible" data-name="module.monitoring.azurerm_virtual_machine_extension.ama">
+
+<polygon fill="none" stroke="black" points="1854.47,-222 1606.88,-222 1606.88,-186 1854.47,-186 1854.47,-222" style=""/>
+<text text-anchor="middle" x="1730.68" y="-199.8" font-family="sans-serif" font-size="14.00" style="">azurerm_virtual_machine_extension.ama</text>
+</g>
+<!-- module.monitoring.azurerm_monitor_data_collection_rule.this&#45;&gt;module.monitoring.azurerm_virtual_machine_extension.ama -->
+<g id="edge8" class="edge" data-name="module.monitoring.azurerm_monitor_data_collection_rule.this-&gt;module.monitoring.azurerm_virtual_machine_extension.ama">
+
+<path fill="none" stroke="black" d="M1922.55,-204C1903.95,-204 1884.75,-204 1866.04,-204" style=""/>
+<polygon fill="black" stroke="black" points="1866.28,-200.5 1856.28,-204 1866.28,-207.5 1866.28,-200.5" style=""/>
+</g>
+<!-- module.storage_account.azurerm_storage_container.this -->
+<g id="node15" class="node" pointer-events="visible" data-name="module.storage_account.azurerm_storage_container.this">
+
+<polygon fill="none" stroke="black" points="1826.77,-52 1634.58,-52 1634.58,-16 1826.77,-16 1826.77,-52" style=""/>
+<text text-anchor="middle" x="1730.68" y="-29.8" font-family="sans-serif" font-size="14.00" style="">azurerm_storage_container.this</text>
+</g>
+<!-- module.monitoring.azurerm_monitor_data_collection_rule.this&#45;&gt;module.storage_account.azurerm_storage_container.this -->
+<g id="edge9" class="edge" data-name="module.monitoring.azurerm_monitor_data_collection_rule.this-&gt;module.storage_account.azurerm_storage_container.this">
+
+<path fill="none" stroke="black" d="M2030.76,-185.76C2002.23,-160.95 1947.84,-116.51 1894.99,-89 1869.33,-75.65 1839.76,-64.53 1812.89,-55.88" style=""/>
+<polygon fill="black" stroke="black" points="1813.99,-52.55 1803.4,-52.89 1811.89,-59.23 1813.99,-52.55" style=""/>
+</g>
+<!-- module.monitoring.azurerm_monitor_data_collection_rule_association.this -->
+<g id="node7" class="node" pointer-events="visible" data-name="module.monitoring.azurerm_monitor_data_collection_rule_association.this">
+
+<polygon fill="none" stroke="black" points="2544.79,-222 2216.98,-222 2216.98,-186 2544.79,-186 2544.79,-222" style=""/>
+<text text-anchor="middle" x="2380.89" y="-199.8" font-family="sans-serif" font-size="14.00" style="">azurerm_monitor_data_collection_rule_association.this</text>
+</g>
+<!-- module.monitoring.azurerm_monitor_data_collection_rule_association.this&#45;&gt;module.monitoring.azurerm_monitor_data_collection_rule.this -->
+<g id="edge10" class="edge" data-name="module.monitoring.azurerm_monitor_data_collection_rule_association.this-&gt;module.monitoring.azurerm_monitor_data_collection_rule.this">
+
+<path fill="none" stroke="black" d="M2216.49,-204C2208.66,-204 2200.83,-204 2193.08,-204" style=""/>
+<polygon fill="black" stroke="black" points="2193.29,-200.5 2183.29,-204 2193.29,-207.5 2193.29,-200.5" style=""/>
+</g>
+<!-- module.monitoring.azurerm_virtual_machine_extension.ama&#45;&gt;module.vm_nic.azurerm_linux_virtual_machine.this -->
+<g id="edge11" class="edge" data-name="module.monitoring.azurerm_virtual_machine_extension.ama-&gt;module.vm_nic.azurerm_linux_virtual_machine.this">
+
+<path fill="none" stroke="black" d="M1606.8,-204C1588.18,-204 1568.98,-204 1550.4,-204" style=""/>
+<polygon fill="black" stroke="black" points="1550.44,-200.5 1540.44,-204 1550.44,-207.5 1550.44,-200.5" style=""/>
+</g>
+<!-- module.nat_gateway.azurerm_nat_gateway.this -->
+<g id="node9" class="node" pointer-events="visible" data-name="module.nat_gateway.azurerm_nat_gateway.this">
+
+<polygon fill="none" stroke="black" points="645.04,-175 481.38,-175 481.38,-139 645.04,-139 645.04,-175" style=""/>
+<text text-anchor="middle" x="563.21" y="-152.8" font-family="sans-serif" font-size="14.00" style="">azurerm_nat_gateway.this</text>
+</g>
+<!-- module.nat_gateway.azurerm_nat_gateway.this&#45;&gt;module.resource_group.azurerm_resource_group.this -->
+<g id="edge12" class="edge" data-name="module.nat_gateway.azurerm_nat_gateway.this-&gt;module.resource_group.azurerm_resource_group.this">
+
+<path fill="none" stroke="black" d="M481.04,-156.21C412.17,-156.64 310.94,-159.87 223.66,-173 209.39,-175.15 194.33,-178.31 179.94,-181.79" style=""/>
+<polygon fill="black" stroke="black" points="179.42,-178.32 170.57,-184.14 181.12,-185.11 179.42,-178.32" style=""/>
+</g>
+<!-- module.nat_gateway.azurerm_nat_gateway_public_ip_association.this -->
+<g id="node10" class="node" pointer-events="visible" data-name="module.nat_gateway.azurerm_nat_gateway_public_ip_association.this">
+
+<polygon fill="none" stroke="black" points="1029.11,-175 736.28,-175 736.28,-139 1029.11,-139 1029.11,-175" style=""/>
+<text text-anchor="middle" x="882.69" y="-152.8" font-family="sans-serif" font-size="14.00" style="">azurerm_nat_gateway_public_ip_association.this</text>
+</g>
+<!-- module.nat_gateway.azurerm_nat_gateway_public_ip_association.this&#45;&gt;module.nat_gateway.azurerm_nat_gateway.this -->
+<g id="edge13" class="edge" data-name="module.nat_gateway.azurerm_nat_gateway_public_ip_association.this-&gt;module.nat_gateway.azurerm_nat_gateway.this">
+
+<path fill="none" stroke="black" d="M735.96,-157C708.96,-157 681.46,-157 656.6,-157" style=""/>
+<polygon fill="black" stroke="black" points="656.89,-153.5 646.89,-157 656.89,-160.5 656.89,-153.5" style=""/>
+</g>
+<!-- module.nat_public_ip.azurerm_public_ip.this -->
+<g id="node12" class="node" pointer-events="visible" data-name="module.nat_public_ip.azurerm_public_ip.this">
+
+<polygon fill="none" stroke="black" points="395.63,-221 249.69,-221 249.69,-185 395.63,-185 395.63,-221" style=""/>
+<text text-anchor="middle" x="322.66" y="-198.8" font-family="sans-serif" font-size="14.00" style="">azurerm_public_ip.this</text>
+</g>
+<!-- module.nat_gateway.azurerm_nat_gateway_public_ip_association.this&#45;&gt;module.nat_public_ip.azurerm_public_ip.this -->
+<g id="edge14" class="edge" data-name="module.nat_gateway.azurerm_nat_gateway_public_ip_association.this-&gt;module.nat_public_ip.azurerm_public_ip.this">
+
+<path fill="none" stroke="black" d="M753.14,-175.48C727.86,-178.68 701.51,-181.71 676.76,-184 584.65,-192.53 478.63,-197.6 407,-200.33" style=""/>
+<polygon fill="black" stroke="black" points="407.18,-196.82 397.32,-200.69 407.44,-203.82 407.18,-196.82" style=""/>
+</g>
+<!-- module.nat_gateway.azurerm_subnet_nat_gateway_association.this -->
+<g id="node11" class="node" pointer-events="visible" data-name="module.nat_gateway.azurerm_subnet_nat_gateway_association.this">
+
+<polygon fill="none" stroke="black" points="1020.78,-229 744.61,-229 744.61,-193 1020.78,-193 1020.78,-229" style=""/>
+<text text-anchor="middle" x="882.69" y="-206.8" font-family="sans-serif" font-size="14.00" style="">azurerm_subnet_nat_gateway_association.this</text>
+</g>
+<!-- module.nat_gateway.azurerm_subnet_nat_gateway_association.this&#45;&gt;module.nat_gateway.azurerm_nat_gateway.this -->
+<g id="edge15" class="edge" data-name="module.nat_gateway.azurerm_subnet_nat_gateway_association.this-&gt;module.nat_gateway.azurerm_nat_gateway.this">
+
+<path fill="none" stroke="black" d="M763.95,-192.51C746.77,-189.72 729.3,-186.82 712.76,-184 694.6,-180.9 675.21,-177.46 656.63,-174.11" style=""/>
+<polygon fill="black" stroke="black" points="657.45,-170.7 646.99,-172.37 656.2,-177.59 657.45,-170.7" style=""/>
+</g>
+<!-- module.subnets_nsg.azurerm_subnet.vm -->
+<g id="node17" class="node" pointer-events="visible" data-name="module.subnets_nsg.azurerm_subnet.vm">
+
+<polygon fill="none" stroke="black" points="626.51,-314 499.92,-314 499.92,-278 626.51,-278 626.51,-314" style=""/>
+<text text-anchor="middle" x="563.21" y="-291.8" font-family="sans-serif" font-size="14.00" style="">azurerm_subnet.vm</text>
+</g>
+<!-- module.nat_gateway.azurerm_subnet_nat_gateway_association.this&#45;&gt;module.subnets_nsg.azurerm_subnet.vm -->
+<g id="edge16" class="edge" data-name="module.nat_gateway.azurerm_subnet_nat_gateway_association.this-&gt;module.subnets_nsg.azurerm_subnet.vm">
+
+<path fill="none" stroke="black" d="M812.92,-229.49C773.15,-240.17 722.14,-253.86 676.76,-266 664.1,-269.39 650.62,-272.98 637.57,-276.47" style=""/>
+<polygon fill="black" stroke="black" points="636.95,-273.01 628.19,-278.97 638.75,-279.77 636.95,-273.01" style=""/>
+</g>
+<!-- module.nat_public_ip.azurerm_public_ip.this&#45;&gt;module.resource_group.azurerm_resource_group.this -->
+<g id="edge17" class="edge" data-name="module.nat_public_ip.azurerm_public_ip.this-&gt;module.resource_group.azurerm_resource_group.this">
+
+<path fill="none" stroke="black" d="M249.23,-203C235.68,-203 221.29,-203 207.07,-203" style=""/>
+<polygon fill="black" stroke="black" points="207.24,-199.5 197.24,-203 207.24,-206.5 207.24,-199.5" style=""/>
+</g>
+<!-- module.storage_account.azurerm_storage_account.this -->
+<g id="node14" class="node" pointer-events="visible" data-name="module.storage_account.azurerm_storage_account.this">
+
+<polygon fill="none" stroke="black" points="1520.25,-52 1337.16,-52 1337.16,-16 1520.25,-16 1520.25,-52" style=""/>
+<text text-anchor="middle" x="1428.71" y="-29.8" font-family="sans-serif" font-size="14.00" style="">azurerm_storage_account.this</text>
+</g>
+<!-- module.storage_account.azurerm_storage_account.this&#45;&gt;module.resource_group.azurerm_resource_group.this -->
+<g id="edge18" class="edge" data-name="module.storage_account.azurerm_storage_account.this-&gt;module.resource_group.azurerm_resource_group.this">
+
+<path fill="none" stroke="black" d="M1336.79,-40.19C1228.81,-47.01 1043.21,-57 883.69,-57 883.69,-57 883.69,-57 562.21,-57 409.91,-57 363.11,-48.76 223.66,-110 188.04,-125.64 154.03,-154.91 131.99,-176.45" style=""/>
+<polygon fill="black" stroke="black" points="129.53,-173.95 124.93,-183.49 134.48,-178.9 129.53,-173.95" style=""/>
+</g>
+<!-- module.storage_account.azurerm_storage_container.this&#45;&gt;module.storage_account.azurerm_storage_account.this -->
+<g id="edge19" class="edge" data-name="module.storage_account.azurerm_storage_container.this-&gt;module.storage_account.azurerm_storage_account.this">
+
+<path fill="none" stroke="black" d="M1634.35,-34C1601.68,-34 1564.99,-34 1531.8,-34" style=""/>
+<polygon fill="black" stroke="black" points="1532.2,-30.5 1522.2,-34 1532.2,-37.5 1532.2,-30.5" style=""/>
+</g>
+<!-- module.subnets_nsg.azurerm_network_security_group.vm -->
+<g id="node16" class="node" pointer-events="visible" data-name="module.subnets_nsg.azurerm_network_security_group.vm">
+
+<polygon fill="none" stroke="black" points="676.81,-368 449.61,-368 449.61,-332 676.81,-332 676.81,-368" style=""/>
+<text text-anchor="middle" x="563.21" y="-345.8" font-family="sans-serif" font-size="14.00" style="">azurerm_network_security_group.vm</text>
+</g>
+<!-- module.subnets_nsg.azurerm_network_security_group.vm&#45;&gt;module.resource_group.azurerm_resource_group.this -->
+<g id="edge20" class="edge" data-name="module.subnets_nsg.azurerm_network_security_group.vm-&gt;module.resource_group.azurerm_resource_group.this">
+
+<path fill="none" stroke="black" d="M455.42,-331.5C450.6,-329.01 445.98,-326.18 441.66,-323 427.25,-312.36 436.44,-298.13 421.66,-288 348.25,-237.67 308.82,-283.89 223.66,-258 198.04,-250.21 170.89,-237.71 149.22,-226.6" style=""/>
+<polygon fill="black" stroke="black" points="150.88,-223.52 140.39,-221.98 147.63,-229.72 150.88,-223.52" style=""/>
+</g>
+<!-- module.subnets_nsg.azurerm_subnet.vm&#45;&gt;module.vnet.azurerm_virtual_network.this -->
+<g id="edge21" class="edge" data-name="module.subnets_nsg.azurerm_subnet.vm-&gt;module.vnet.azurerm_virtual_network.this">
+
+<path fill="none" stroke="black" d="M499.54,-301.78C476.69,-303.89 450.23,-306.33 424.89,-308.66" style=""/>
+<polygon fill="black" stroke="black" points="424.87,-305.15 415.24,-309.55 425.52,-312.12 424.87,-305.15" style=""/>
+</g>
+<!-- module.subnets_nsg.azurerm_subnet_network_security_group_association.vm -->
+<g id="node18" class="node" pointer-events="visible" data-name="module.subnets_nsg.azurerm_subnet_network_security_group_association.vm">
+
+<polygon fill="none" stroke="black" points="1052.55,-341 712.83,-341 712.83,-305 1052.55,-305 1052.55,-341" style=""/>
+<text text-anchor="middle" x="882.69" y="-318.8" font-family="sans-serif" font-size="14.00" style="">azurerm_subnet_network_security_group_association.vm</text>
+</g>
+<!-- module.subnets_nsg.azurerm_subnet_network_security_group_association.vm&#45;&gt;module.subnets_nsg.azurerm_network_security_group.vm -->
+<g id="edge22" class="edge" data-name="module.subnets_nsg.azurerm_subnet_network_security_group_association.vm-&gt;module.subnets_nsg.azurerm_network_security_group.vm">
+
+<path fill="none" stroke="black" d="M712.73,-337.37C704.58,-338.06 696.46,-338.75 688.46,-339.43" style=""/>
+<polygon fill="black" stroke="black" points="688.43,-335.92 678.76,-340.26 689.02,-342.9 688.43,-335.92" style=""/>
+</g>
+<!-- module.subnets_nsg.azurerm_subnet_network_security_group_association.vm&#45;&gt;module.subnets_nsg.azurerm_subnet.vm -->
+<g id="edge23" class="edge" data-name="module.subnets_nsg.azurerm_subnet_network_security_group_association.vm-&gt;module.subnets_nsg.azurerm_subnet.vm">
+
+<path fill="none" stroke="black" d="M712.73,-308.63C686.62,-306.41 660.89,-304.22 638.37,-302.31" style=""/>
+<polygon fill="black" stroke="black" points="638.67,-298.82 628.41,-301.46 638.07,-305.79 638.67,-298.82" style=""/>
+</g>
+<!-- module.vm_nic.azurerm_network_interface.this -->
+<g id="node20" class="node" pointer-events="visible" data-name="module.vm_nic.azurerm_network_interface.this">
+
+<polygon fill="none" stroke="black" points="1283.25,-222 1088.41,-222 1088.41,-186 1283.25,-186 1283.25,-222" style=""/>
+<text text-anchor="middle" x="1185.83" y="-199.8" font-family="sans-serif" font-size="14.00" style="">azurerm_network_interface.this</text>
+</g>
+<!-- module.vm_nic.azurerm_linux_virtual_machine.this&#45;&gt;module.vm_nic.azurerm_network_interface.this -->
+<g id="edge24" class="edge" data-name="module.vm_nic.azurerm_linux_virtual_machine.this-&gt;module.vm_nic.azurerm_network_interface.this">
+
+<path fill="none" stroke="black" d="M1318.54,-204C1310.68,-204 1302.76,-204 1294.9,-204" style=""/>
+<polygon fill="black" stroke="black" points="1294.97,-200.5 1284.97,-204 1294.97,-207.5 1294.97,-200.5" style=""/>
+</g>
+<!-- module.vm_nic.azurerm_network_interface.this&#45;&gt;module.nat_gateway.azurerm_nat_gateway_public_ip_association.this -->
+<g id="edge25" class="edge" data-name="module.vm_nic.azurerm_network_interface.this-&gt;module.nat_gateway.azurerm_nat_gateway_public_ip_association.this">
+
+<path fill="none" stroke="black" d="M1088.22,-188.36C1078.89,-186.88 1069.58,-185.4 1060.62,-184 1046.44,-181.78 1031.6,-179.47 1016.82,-177.2" style=""/>
+<polygon fill="black" stroke="black" points="1017.45,-173.75 1007.04,-175.69 1016.39,-180.67 1017.45,-173.75" style=""/>
+</g>
+<!-- module.vm_nic.azurerm_network_interface.this&#45;&gt;module.nat_gateway.azurerm_subnet_nat_gateway_association.this -->
+<g id="edge26" class="edge" data-name="module.vm_nic.azurerm_network_interface.this-&gt;module.nat_gateway.azurerm_subnet_nat_gateway_association.this">
+
+<path fill="none" stroke="black" d="M1088.31,-206.24C1070.49,-206.66 1051.5,-207.1 1032.55,-207.54" style=""/>
+<polygon fill="black" stroke="black" points="1032.52,-204.04 1022.6,-207.77 1032.68,-211.04 1032.52,-204.04" style=""/>
+</g>
+<!-- module.vnet.azurerm_virtual_network.this&#45;&gt;module.resource_group.azurerm_resource_group.this -->
+<g id="edge27" class="edge" data-name="module.vnet.azurerm_virtual_network.this-&gt;module.resource_group.azurerm_resource_group.this">
+
+<path fill="none" stroke="black" d="M255.71,-299.51C244.78,-295.59 233.73,-291.07 223.66,-286 192.22,-270.16 159.84,-246.47 137.17,-228.45" style=""/>
+<polygon fill="black" stroke="black" points="139.53,-225.87 129.55,-222.31 135.14,-231.31 139.53,-225.87" style=""/>
+</g>
+</g>
+</svg>
