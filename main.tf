@@ -2,7 +2,7 @@
 # 1. Resource Group
 # -----------------------------------------------------------------------------
 module "resource_group" {
-  source = "github.com/${var.github_username}/stw-tf-resource-group?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-resource-group?ref=v1.0.0"
 
   project_name = var.project_name
   environment  = var.environment
@@ -13,7 +13,7 @@ module "resource_group" {
 # 2. Virtual Network
 # -----------------------------------------------------------------------------
 module "vnet" {
-  source = "github.com/${var.github_username}/stw-tf-vnet?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-vnet?ref=v1.0.0"
 
   project_name         = var.project_name
   environment          = var.environment
@@ -26,7 +26,7 @@ module "vnet" {
 # 3. Subnets + NSG
 # -----------------------------------------------------------------------------
 module "subnets_nsg" {
-  source = "github.com/${var.github_username}/stw-tf-subnets-nsg?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-subnets-nsg?ref=v1.0.0"
 
   project_name         = var.project_name
   environment          = var.environment
@@ -65,7 +65,7 @@ module "subnets_nsg" {
 # 4. Public IPs — same module, called twice
 # -----------------------------------------------------------------------------
 module "bastion_public_ip" {
-  source = "github.com/${var.github_username}/stw-tf-public-ip?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-public-ip?ref=v1.0.0"
 
   project_name         = var.project_name
   environment          = var.environment
@@ -75,7 +75,7 @@ module "bastion_public_ip" {
 }
 
 module "nat_public_ip" {
-  source = "github.com/${var.github_username}/stw-tf-public-ip?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-public-ip?ref=v1.0.0"
 
   project_name         = var.project_name
   environment          = var.environment
@@ -88,7 +88,7 @@ module "nat_public_ip" {
 # 5. Bastion
 # -----------------------------------------------------------------------------
 module "bastion" {
-  source = "github.com/${var.github_username}/stw-tf-bastion?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-bastion?ref=v1.0.0"
 
   project_name                    = var.project_name
   environment                     = var.environment
@@ -103,7 +103,7 @@ module "bastion" {
 # 6. NAT Gateway
 # -----------------------------------------------------------------------------
 module "nat_gateway" {
-  source = "github.com/${var.github_username}/stw-tf-nat-gateway?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-nat-gateway?ref=v1.0.0"
 
   project_name         = var.project_name
   environment          = var.environment
@@ -117,7 +117,7 @@ module "nat_gateway" {
 # 7. Storage Account
 # -----------------------------------------------------------------------------
 module "storage_account" {
-  source = "github.com/${var.github_username}/stw-tf-storage-account?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-storage-account?ref=v1.0.0"
 
   project_name         = var.project_name
   environment          = var.environment
@@ -130,7 +130,7 @@ module "storage_account" {
 # 8. Virtual Machine + NIC
 # -----------------------------------------------------------------------------
 module "vm_nic" {
-  source = "github.com/${var.github_username}/stw-tf-vm-nic?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-vm-nic?ref=v1.0.0"
 
   project_name          = var.project_name
   environment           = var.environment
@@ -146,7 +146,7 @@ module "vm_nic" {
 # 9. Data Disks
 # -----------------------------------------------------------------------------
 module "data_disks" {
-  source = "github.com/${var.github_username}/stw-tf-data-disks?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-data-disks?ref=v1.0.0"
 
   project_name         = var.project_name
   environment          = var.environment
@@ -167,7 +167,7 @@ module "data_disks" {
 # 10. Monitoring (DCR)
 # -----------------------------------------------------------------------------
 module "monitoring" {
-  source = "github.com/${var.github_username}/stw-tf-monitoring?ref=${local.module_version}"
+  source = "github.com/azimkayz/stw-tf-monitoring?ref=v1.0.0"
 
   project_name             = var.project_name
   environment              = var.environment
