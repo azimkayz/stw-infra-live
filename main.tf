@@ -130,7 +130,7 @@ module "storage_account" {
 # 8. Virtual Machine + NIC
 # -----------------------------------------------------------------------------
 module "vm_nic" {
-  source = "github.com/azimkayz/stw-tf-vm-nic?ref=v1.0.0"
+  source = "github.com/azimkayz/stw-tf-vm-nic?ref=v1.1.0"
 
   project_name         = var.project_name
   environment          = var.environment
@@ -168,13 +168,14 @@ module "data_disks" {
 # 10. Monitoring (DCR)
 # -----------------------------------------------------------------------------
 module "monitoring" {
-  source = "github.com/azimkayz/stw-tf-monitoring?ref=v1.0.0"
+  source = "github.com/azimkayz/stw-tf-monitoring?ref=v1.1.0"
 
-  project_name           = var.project_name
-  environment            = var.environment
-  location               = var.location
-  resource_group_name    = module.resource_group.resource_group_name
-  vm_id                  = module.vm_nic.vm_id
-  storage_account_id     = module.storage_account.storage_account_id
-  storage_container_name = module.storage_account.storage_container_name
+  project_name             = var.project_name
+  environment              = var.environment
+  location                 = var.location
+  resource_group_name      = module.resource_group.resource_group_name
+  vm_id                    = module.vm_nic.vm_id
+  vm_identity_principal_id = module.vm_nic.vm_identity_principal_id # ADD
+  storage_account_id       = module.storage_account.storage_account_id
+  storage_container_name   = module.storage_account.storage_container_name
 }
