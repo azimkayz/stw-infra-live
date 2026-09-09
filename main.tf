@@ -90,13 +90,13 @@ module "nat_public_ip" {
 module "bastion" {
   source = "github.com/azimkayz/stw-tf-bastion?ref=v1.0.0"
 
-  project_name                  = var.project_name
-  environment                   = var.environment
-  location                      = var.location
-  resource_group_name           = module.resource_group.resource_group_name
-  vnet_name                     = module.vnet.vnet_name
+  project_name                   = var.project_name
+  environment                    = var.environment
+  location                       = var.location
+  resource_group_name            = module.resource_group.resource_group_name
+  vnet_name                      = module.vnet.vnet_name
   bastion_subnet_address_prefix = ["10.0.2.0/26"]
-  bastion_public_ip_id          = module.bastion_public_ip.public_ip_id
+  bastion_public_ip_id           = module.bastion_public_ip.public_ip_id
 }
 
 # -----------------------------------------------------------------------------
@@ -165,17 +165,26 @@ module "data_disks" {
 }
 
 # -----------------------------------------------------------------------------
-# 10. Monitoring (DCR)
+# 10. Log Analytics Workspace
+# -----------------------------------------------------------------------------
+resource "azurerm_log_analytics_workspace" "this" {
+  name                = "log-${var.project_name}-${var.environment}"
+  location            = var.location
+  resource_group_name = module.resource_group.resource_group_name
+  sku                 = "PerGB2018"
+  retention_in_days   = 30
+}
+
+# -----------------------------------------------------------------------------
+# 11. Monitoring (DCR)
 # -----------------------------------------------------------------------------
 module "monitoring" {
-  source = "github.com/azimkayz/stw-tf-monitoring?ref=v1.1.0"
+  source = "github.com/azimkayz/stw-tf-monitoring?ref=v1.2.2"
 
-  project_name             = var.project_name
-  environment              = var.environment
-  location                 = var.location
-  resource_group_name      = module.resource_group.resource_group_name
-  vm_id                    = module.vm_nic.vm_id
-  vm_identity_principal_id = module.vm_nic.vm_identity_principal_id # ADD
-  storage_account_id       = module.storage_account.storage_account_id
-  storage_container_name   = module.storage_account.storage_container_name
+  project_name               = var.project_name
+  environment                = var.environment
+  location                   = var.location
+  resource_group_name        = module.resource_group.resource_group_name
+  vm_id                      = module.vm_nic.vm_id
+  log_analytics_workspace_id = azurerm_log_analytics_workspace.this.id
 }
