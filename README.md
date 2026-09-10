@@ -1,8 +1,11 @@
 # stw-infra-live
 
-The live production environment for Stewardship (Phase 2) "Project A". This
+The live production environment for Stewardship Enterprise Workloads (Phase 2). This
 repository composes all 10 single-responsibility Terraform modules into a
-working deployment.
+secure, production-ready Azure deployment.
+
+It provides a hardened network topology, private compute instances with automated 
+Syslog ingestion, and isolated management access via Azure Bastion.
 
 ## What this deploys
 
