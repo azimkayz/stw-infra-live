@@ -2,8 +2,6 @@
 
 The production environment for Stewardship "Project A". This repository does not create any resources of its own — it composes ten independently-versioned Terraform modules, each pinned to `v1.0.0`, and wires their outputs together to build the full environment.
 
-![Architecture diagram](./docs/architecture.png)
-
 ![Architecture diagram](./docs/azure architecture.png)
 
 ## The problem
