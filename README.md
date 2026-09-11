@@ -7,7 +7,7 @@ The production environment for Stewardship "Project A". This repository does not
 
 ## The problem
 
-The original Project A codebase was a single monolithic Terraform configuration: one `main.tf`, every resource in one blast radius. A change to a Bastion rule required planning the entire environment, cost couldn't be attributed to a layer because nothing was separable, naming drifted between environments because it was typed by hand at each call site, and nothing was reusable — a second project would have meant copy-pasting the whole thing rather than consuming a module. This repository replaces that with ten single-responsibility modules composed here, so a change to monitoring, for example, plans and applies independently of a change to the network.
+The original Project A codebase was a single monolithic Terraform configuration: one `main.tf`, every resource in one blast radius. A change to a Bastion rule required planning the entire environment, cost couldn't be attributed to a layer because nothing was separable, naming drifted between environments because it was typed by hand at each call site, and nothing was reusable, a second project would have meant copy-pasting the whole thing rather than consuming a module. This repository replaces that with ten single responsibility modules composed here, so a change to monitoring, for example, plans and applies independently of a change to the network.
 
 ## Architecture
 
@@ -57,7 +57,7 @@ All dependencies flow through module outputs passed as inputs — there is no `d
    ```
 7. **Connect** — once applied, connect to the VM through Azure Bastion in the Portal (Bastion does not require the VM to have a public IP).
 
-A reviewer who has never seen this project should be able to follow these steps to a successful `apply` without asking a question. If any step above is wrong or missing something you needed, that's a documentation bug — not tribal knowledge you're expected to have.
+A reviewer who has never seen this project should be able to follow these steps to a successful `apply` without asking a question. If any step above is wrong or missing something you needed, that's a documentation bug not tribal knowledge you're expected to have.
 
 ## Evidence
 
@@ -94,5 +94,5 @@ Screenshots are in [`docs/screenshots`](./docs/screenshots), from an actual depl
 ## What I would do differently
 
 - **Remote state with locking.** This repository currently runs with local state. A production platform needs an Azure Storage Account backend with state locking so two people (or two CI runs) can't apply concurrently and corrupt state.
-- **Secrets in Key Vault, not `tfvars`.** `admin_ssh_public_key` is a public key so it's low-risk, but the pattern doesn't generalise — any future secret input should come from Azure Key Vault via a data source and a managed identity, not a `.tfvars` file a developer has to remember not to commit.
+- **Secrets in Key Vault, not `tfvars`.** `admin_ssh_public_key` is a public key so it's low-risk, but the pattern doesn't generalise, any future secret input should come from Azure Key Vault via a data source and a managed identity, not a `.tfvars` file a developer has to remember not to commit.
 - **CI on every pull request.** `terraform fmt -check`, `terraform validate`, and a `terraform plan` posted as a PR comment on every module and on this repository, so a broken module is caught before it's tagged `v1.0.0`, not after someone else has already pinned to it.
