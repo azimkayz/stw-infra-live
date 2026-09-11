@@ -4,9 +4,7 @@ The production environment for Stewardship "Project A". This repository does not
 
 ![Architecture diagram](./docs/architecture.png)
 
-![Architecture diagram](./docs/architecture.png)
-![Azure Architecture](./docs/azure architecture.png)
-
+![Architecture diagram](./docs/azure architecture.png)
 
 ## The problem
 
