@@ -1,6 +1,6 @@
 # stw-infra-live
 
-The production environment for Stewardship "Project A". This repository does not create any resources of its own — it composes ten independently-versioned Terraform modules, each pinned to `v1.0.0`, and wires their outputs together to build the full environment.
+The production environment for Stewardship "Project A". This repository does not create any resources of its own, it composes ten independently-versioned Terraform modules, each pinned to `v1.0.0`, and wires their outputs together to build the full environment.
 
 ![Azure Architecture](/docs/azure-architecture.png)
 ![Architecture Design](/docs/architecture-design.png)
@@ -47,7 +47,7 @@ All dependencies flow through module outputs passed as inputs — there is no `d
    ```hcl
    project_name         = "projecta"
    environment           = "prod"
-   admin_ssh_public_key  = "ssh-rsa AAAA... your-key"
+   admin_ssh_public_key  = "ssh-rsa AAAA... key"
    ```
 6. **Deploy**:
    ```bash
@@ -82,14 +82,14 @@ Screenshots are in [`docs/screenshots`](./docs/screenshots), from an actual depl
 
 - **Monitoring is a separate module from compute.** `monitoring-dcr` is applied to a VM after it exists, rather than embedding the DCR, association, and extension into `vm-nic`. The Security Team's controls can then change version independently of compute — bumping monitoring behaviour doesn't force a VM redeploy, and vice versa.
 - **Public IP is standalone, not built into Bastion or NAT Gateway.** Both consumers need functionally the same resource (a Standard SKU static Public IP) with a different `purpose` tag baked into the name. One module with a `purpose` input avoided writing IP-allocation logic twice and kept both consumer modules focused only on what makes them different.
-- **Names are generated in locals, never passed in.** Every module takes `project_name`, `environment`, `location`, and `resource_group_name` and derives the resource name internally. This is what makes the `<resource>-<project_name>-<environment>-<location>` convention actually hold across ten repositories written (and potentially reused) by different people — it can't drift because no caller can type a name directly.
+- **Names are generated in locals, never passed in.** Every module takes `project_name`, `environment`, `location`, and `resource_group_name` and derives the resource name internally. This is what makes the `<resource>-<project_name>-<environment>-<location>` convention actually hold across ten repositories written (and potentially reused) by different people, it can't drift because no caller can type a name directly.
 - **`location` is validated, not just defaulted.** Every module rejects any value other than `southafricanorth` via a variable validation block. A default can be silently overridden; a validation block fails the plan, which is the behaviour a platform-wide region constraint actually needs.
 
 ## Challenges
 
-- **DCR association ordering.** The Data Collection Rule Association and the `AzureMonitorLinuxAgent` VM extension both target the VM, but the DCR only starts collecting once the extension has finished provisioning. Terraform doesn't know about that runtime dependency implicitly — the fix was making sure the extension resource and the association both depend on `vm_id` from the same `vm-nic` output, and re-running `terraform apply` (or waiting) rather than treating a "not collecting" status in the Portal immediately after apply as a failure. The `06` and `07` screenshots above were taken after the extension reported "Provisioning succeeded", not before.
+- **DCR association ordering.** The Data Collection Rule Association and the `AzureMonitorLinuxAgent` VM extension both target the VM, but the DCR only starts collecting once the extension has finished provisioning. Terraform doesn't know about that runtime dependency implicitly. the fix was making sure the extension resource and the association both depend on `vm_id` from the same `vm-nic` output, and re-running `terraform apply` (or waiting) rather than treating a "not collecting" status in the Portal immediately after apply as a failure. The `06` and `07` screenshots above were taken after the extension reported "Provisioning succeeded", not before.
 - **`AzureBastionSubnet` naming and size constraints.** Azure requires the Bastion subnet to be named exactly `AzureBastionSubnet` and refuses anything smaller than a `/26`. The `bastion` module hardcodes the name in `locals.tf` (rather than exposing it as an input, since it genuinely cannot vary) and defaults the prefix to a `/26`, while still allowing a caller to widen it.
-- **Passing IDs versus names between modules.** Several modules need to reference a parent resource that's owned by another module — a subnet needs a VNet, a data disk needs a VM. The convention adopted throughout is: pass **names** where the consuming resource needs a name for its own API call (e.g. `vnet_name` into `subnets-nsg`), and pass **IDs** where the consuming resource needs a resource reference (e.g. `vm_id` into `data-disks` and `monitoring-dcr`). Mixing the two inconsistently across modules was the initial mistake — standardising on "id when it's a reference, name when it's a scope" is what made the outputs tables in each child README predictable to write.
+- **Passing IDs versus names between modules.** Several modules need to reference a parent resource that's owned by another module — a subnet needs a VNet, a data disk needs a VM. The convention adopted throughout is: pass **names** where the consuming resource needs a name for its own API call (e.g. `vnet_name` into `subnets-nsg`), and pass **IDs** where the consuming resource needs a resource reference (e.g. `vm_id` into `data-disks` and `monitoring-dcr`). Mixing the two inconsistently across modules was the initial mistake, standardising on "id when it's a reference, name when it's a scope" is what made the outputs tables in each child README predictable to write.
 
 ## What I would do differently
 
